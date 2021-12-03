@@ -19,38 +19,34 @@ test("shows success message on submit with form details", () => {
     render(<CheckoutForm />)
 
     // Act
-    // 1. Getters for all inputs & typing in inputs
+    // Getters for all inputs & typing in inputs
 
-    const fNameInput = screen.queryByLabelText('First Name:')
+    const fNameInput = screen.queryByLabelText(/First Name:/i)
     userEvent.type(fNameInput, "Peter")
 
-    const lNameInput = screen.queryByLabelText('Last Name:')
+    const lNameInput = screen.queryByLabelText(/Last Name:/i)
     userEvent.type(lNameInput, "Conley")
 
-    const addressInput = screen.queryByLabelText('Address:')
+    const addressInput = screen.queryByLabelText(/Address:/i)
     userEvent.type(addressInput, "315 S Cayuga Rd")
 
-    const cityInput = screen.queryByLabelText('City:')
+    const cityInput = screen.queryByLabelText(/City:/i)
     userEvent.type(cityInput, "Buffalo")
 
-    const stateInput = screen.queryByLabelText('State:')
+    const stateInput = screen.queryByLabelText(/State:/i)
     userEvent.type(stateInput, "NY")
 
-    const zipInput = screen.queryByLabelText('Zip:')
+    const zipInput = screen.queryByLabelText(/Zip:/i)
     userEvent.type(zipInput, "14221")
 
-    // 3. Submit with button 
+    // Submit with button 
 
     const button = screen.getByRole("button");
     userEvent.click(button);
 
-    // 4. Getter for success message & input values
-
-
-
     // Assert
 
-    await waitFor(() => {
+   
 
     const successMessage = screen.queryByText('You have ordered some plants!')
     expect(successMessage).toBeInTheDocument();
@@ -67,6 +63,6 @@ test("shows success message on submit with form details", () => {
     const zip = screen.queryByText('14221')
     expect(zip).toBeInTheDocument();
 
-    })
+    
 
 });
