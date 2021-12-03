@@ -54,17 +54,17 @@ test("shows success message on submit with form details", () => {
 
     const successMessage = screen.queryByText('You have ordered some plants!')
     expect(successMessage).toBeInTheDocument();
-    const firstName = screen.getByText('Peter')
+    const firstName = screen.queryByText('Peter')
     expect(firstName).toBeInTheDocument();
-    const lastName = screen.getByText('Conley')
+    const lastName = screen.queryByText('Conley')
     expect(lastName).toBeInTheDocument();
-    const address = screen.getByText('315 S Cayuga Rd')
+    const address = screen.queryByText('315 S Cayuga Rd')
     expect(address).toBeInTheDocument();
-    const city = screen.getByText('Buffalo')
+    const city = screen.queryByText('Buffalo')
     expect(city).toBeInTheDocument();
-    const state = screen.getByText('NY')
+    const state = screen.queryByText('NY')
     expect(state).toBeInTheDocument();
-    const zip = screen.getByText('14221')
+    const zip = screen.queryByText('14221')
     expect(zip).toBeInTheDocument();
 
     })
