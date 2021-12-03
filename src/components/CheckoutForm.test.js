@@ -19,22 +19,24 @@ test("shows success message on submit with form details", () => {
     render(<CheckoutForm />)
 
     // Act
-    // 1. Getters for all inputs
+    // 1. Getters for all inputs & typing in inputs
 
     const fNameInput = screen.queryByLabelText('First Name:')
-    const lNameInput = screen.queryByLabelText('Last Name:')
-    const addressInput = screen.queryByLabelText('Address:')
-    const cityInput = screen.queryByLabelText('City:')
-    const stateInput = screen.queryByLabelText('State:')
-    const zipInput = screen.queryByLabelText('Zip:')
-
-    // 2. Type into all inputs
-
     userEvent.type(fNameInput, "Peter")
+
+    const lNameInput = screen.queryByLabelText('Last Name:')
     userEvent.type(lNameInput, "Conley")
+
+    const addressInput = screen.queryByLabelText('Address:')
     userEvent.type(addressInput, "315 S Cayuga Rd")
+
+    const cityInput = screen.queryByLabelText('City:')
     userEvent.type(cityInput, "Buffalo")
+
+    const stateInput = screen.queryByLabelText('State:')
     userEvent.type(stateInput, "NY")
+
+    const zipInput = screen.queryByLabelText('Zip:')
     userEvent.type(zipInput, "14221")
 
     // 3. Submit with button 
@@ -44,24 +46,27 @@ test("shows success message on submit with form details", () => {
 
     // 4. Getter for success message & input values
 
-    const successMessage = screen.queryByText('You have ordered some plants!')
-    const firstName = screen.getByText('Peter')
-    const lastName = screen.getByText('Conley')
-    const address = screen.getByText('315 S Cayuga Rd')
-    const city = screen.getByText('Buffalo')
-    const state = screen.getByText('NY')
-    const zip = screen.getByText('14221')
 
 
     // Assert
 
+    await waitFor(() => {
+
+    const successMessage = screen.queryByText('You have ordered some plants!')
     expect(successMessage).toBeInTheDocument();
+    const firstName = screen.getByText('Peter')
     expect(firstName).toBeInTheDocument();
+    const lastName = screen.getByText('Conley')
     expect(lastName).toBeInTheDocument();
+    const address = screen.getByText('315 S Cayuga Rd')
     expect(address).toBeInTheDocument();
+    const city = screen.getByText('Buffalo')
     expect(city).toBeInTheDocument();
+    const state = screen.getByText('NY')
     expect(state).toBeInTheDocument();
+    const zip = screen.getByText('14221')
     expect(zip).toBeInTheDocument();
 
+    })
 
 });
