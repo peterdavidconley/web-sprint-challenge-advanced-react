@@ -30,6 +30,13 @@ test("shows success message on submit with form details", () => {
 
     // 2. Type into all inputs
 
+    userEvent.type(fNameInput, "Peter")
+    userEvent.type(lNameInput, "Conley")
+    userEvent.type(addressInput, "315 S Cayuga Rd")
+    userEvent.type(cityInput, "Williamsville")
+    userEvent.type(stateInput, "NY")
+    userEvent.type(zipInput, "14221")
+
     // 3. Submit with button 
 
     const button = screen.getByRole("button");
@@ -37,7 +44,7 @@ test("shows success message on submit with form details", () => {
 
     // 4. Getter for success message
 
-    const successMessage = screen.getByText('')
+    const successMessage = screen.getByText('You have ordered some plants!')
 
     // Assert
 
