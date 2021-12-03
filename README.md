@@ -83,8 +83,8 @@ In this project, you will build the retrieve data from a public api, add in a fa
 * [x] Try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
 
 ### Testing the Checkout Form
-* [ ] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
-* [ ] Fill out code necessary to test that that Checkout form renders without errors.
+* [x] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
+* [x] Fill out code necessary to test that that Checkout form renders without errors.
 * [ ] Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
 * [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
 
@@ -118,9 +118,17 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What are the main differences between a stateful and a functional component?
 
+The difference between a stateful and functional component is a stateful component requires you to extend the React.Component and create a render function to return anything to the DOM. A Stateful component requires a constructor function to manage state along with a super() method.
+
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
 
+ComponentWillMount function is called during the 'birthing' phase or when the component is being built from the ground up. 
+
+ComponentWillUpdate function is called whenever the specified variable or slice of state changes/updates. 
+
 3. Define stateful logic.
+
+Stateful logic is logic that deals with and effects state, or any code that uses state.
 
 4. What are the three step of creating a successful test? What is done in each phase? 
 

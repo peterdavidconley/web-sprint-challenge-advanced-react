@@ -44,7 +44,7 @@ test("shows success message on submit with form details", () => {
 
     // 4. Getter for success message
 
-    const successMessage = screen.getByText('You have ordered some plants!')
+    const successMessage = screen.queryByText('You have ordered some plants!')
 
     // Assert
 
